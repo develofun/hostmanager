@@ -50,6 +50,8 @@ namespace HostManager.ViewModels
             GuideCommand = new RelayCommand(ExecuteGuide);
             BackupCommand = new RelayCommand(ExecuteBackup);
             OpenHostsFileCommand = new RelayCommand(ExecuteOpenHostsFile);
+            BulkSetEnvCommand = new RelayCommand(ExecuteBulkSetEnv);
+            BulkSetGroupCommand = new RelayCommand(ExecuteBulkSetGroup);
 
             // 최초 실행 시 기존 hosts 파일 백업
             BackupOriginalHostsFile();
@@ -168,6 +170,8 @@ namespace HostManager.ViewModels
         public ICommand GuideCommand { get; }
         public ICommand BackupCommand { get; }
         public ICommand OpenHostsFileCommand { get; }
+        public ICommand BulkSetEnvCommand { get; }
+        public ICommand BulkSetGroupCommand { get; }
 
         #endregion
 
@@ -506,6 +510,55 @@ namespace HostManager.ViewModels
         private void ExecuteCheckAll(object? parameter)
         {
             IsAllSelected = !IsAllSelected;
+        }
+
+        private void ExecuteBulkSetEnv(object? parameter)
+        {
+            var selectedItems = FilteredHostEntries.Where(h => h.IsSelected).ToList();
+
+            if (!selectedItems.Any())
+            {
+                ModernMessageBox.Info(Strings.SelectItemToBulkSet, Strings.Info);
+                return;
+            }
+
+            var availableEnvs = AvailableEnvs.Where(e => !string.IsNullOrEmpty(e)).ToList();
+            var dialog = new BulkSetDialog(BulkSetType.Environment, availableEnvs, selectedItems.Count);
+            dialog.Owner = Application.Current.MainWindow;
+            
+            if (dialog.ShowDialog() == true && dialog.SelectedValue != null)
+            {
+                foreach (var item in selectedItems)
+                {
+                    item.Env = dialog.SelectedValue;
+                }
+                ModernMessageBox.Success(string.Format(Strings.BulkSetSuccess, selectedItems.Count), Strings.Success);
+            }
+        }
+
+        private void ExecuteBulkSetGroup(object? parameter)
+        {
+            var selectedItems = FilteredHostEntries.Where(h => h.IsSelected).ToList();
+
+            if (!selectedItems.Any())
+            {
+                ModernMessageBox.Info(Strings.SelectItemToBulkSet, Strings.Info);
+                return;
+            }
+
+            var availableGroups = AvailableGroups.Where(g => !string.IsNullOrEmpty(g)).ToList();
+            var dialog = new BulkSetDialog(BulkSetType.Group, availableGroups, selectedItems.Count);
+            dialog.Owner = Application.Current.MainWindow;
+            
+            if (dialog.ShowDialog() == true && dialog.SelectedValue != null)
+            {
+                var newValue = dialog.SelectedValue == Strings.None ? "" : dialog.SelectedValue;
+                foreach (var item in selectedItems)
+                {
+                    item.Group = newValue;
+                }
+                ModernMessageBox.Success(string.Format(Strings.BulkSetSuccess, selectedItems.Count), Strings.Success);
+            }
         }
 
         public void UpdateGroupForEntries(string oldGroupName, string newGroupName)

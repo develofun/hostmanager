@@ -136,4 +136,15 @@ Hosts with this environment will have their environment removed.</value></data>
 Hosts with this group will have their group removed.</value></data>
   <data name="ManageEnv" xml:space="preserve"><value>Manage</value></data>
   <data name="ManageGroup" xml:space="preserve"><value>Manage</value></data>
+  
+  <!-- Bulk Set -->
+  <data name="BulkSetEnvTitle" xml:space="preserve"><value>Bulk Set Environment</value></data>
+  <data name="BulkSetGroupTitle" xml:space="preserve"><value>Bulk Set Group</value></data>
+  <data name="SelectedItems" xml:space="preserve"><value>Selected Items</value></data>
+  <data name="ItemCount" xml:space="preserve"><value>{0} items</value></data>
+  <data name="Apply" xml:space="preserve"><value>Apply</value></data>
+  <data name="SelectItemToBulkSet" xml:space="preserve"><value>Please select items to set.</value></data>
+  <data name="BulkSetSuccess" xml:space="preserve"><value>Successfully updated {0} items.</value></data>
+  <data name="SetEnv" xml:space="preserve"><value>Set Env</value></data>
+  <data name="SetGroup" xml:space="preserve"><value>Set Group</value></data>
 </root>

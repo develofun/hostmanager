@@ -265,7 +265,23 @@
                     </DataGridTemplateColumn>
 
                     <!-- 환경 컬럼 -->
-                    <DataGridTemplateColumn Header="환경" Width="100">
+                    <DataGridTemplateColumn Width="120">
+                        <DataGridTemplateColumn.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="환경" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <Button Content="✎" 
+                                        Command="{Binding DataContext.BulkSetEnvCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        ToolTip="선택 항목 환경 일괄 설정"
+                                        FontSize="12"
+                                        Padding="4,2"
+                                        MinWidth="24"
+                                        Background="Transparent"
+                                        Foreground="{StaticResource TextSecondaryBrush}"
+                                        BorderThickness="1"
+                                        BorderBrush="{StaticResource DividerBrush}"
+                                        Cursor="Hand"/>
+                            </StackPanel>
+                        </DataGridTemplateColumn.Header>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <ComboBox ItemsSource="{Binding DataContext.AvailableEnvs, 
@@ -279,7 +295,23 @@
                     </DataGridTemplateColumn>
 
                     <!-- 그룹 컬럼 -->
-                    <DataGridTemplateColumn Header="그룹" Width="120">
+                    <DataGridTemplateColumn Width="140">
+                        <DataGridTemplateColumn.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="그룹" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <Button Content="✎" 
+                                        Command="{Binding DataContext.BulkSetGroupCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        ToolTip="선택 항목 그룹 일괄 설정"
+                                        FontSize="12"
+                                        Padding="4,2"
+                                        MinWidth="24"
+                                        Background="Transparent"
+                                        Foreground="{StaticResource TextSecondaryBrush}"
+                                        BorderThickness="1"
+                                        BorderBrush="{StaticResource DividerBrush}"
+                                        Cursor="Hand"/>
+                            </StackPanel>
+                        </DataGridTemplateColumn.Header>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <ComboBox ItemsSource="{Binding DataContext.AvailableGroups, 

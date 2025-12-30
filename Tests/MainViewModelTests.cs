@@ -494,4 +494,143 @@ namespace HostManager.Tests
             Assert.Empty(filtered);
         }
     }
+
+    /// <summary>
+    /// BulkSet 기능 테스트
+    /// </summary>
+    public class BulkSetTests
+    {
+        [Fact]
+        public void BulkSetEnvCommand_ShouldExist()
+        {
+            // Arrange
+            var vm = new MainViewModel();
+
+            // Assert
+            Assert.NotNull(vm.BulkSetEnvCommand);
+        }
+
+        [Fact]
+        public void BulkSetGroupCommand_ShouldExist()
+        {
+            // Arrange
+            var vm = new MainViewModel();
+
+            // Assert
+            Assert.NotNull(vm.BulkSetGroupCommand);
+        }
+
+        [Fact]
+        public void BulkSetEnv_Logic_ShouldUpdateSelectedEntries()
+        {
+            // Arrange
+            var entries = new List<HostEntry>
+            {
+                new HostEntry { IpAddress = "127.0.0.1", HostName = "localhost", Env = "local", IsSelected = true },
+                new HostEntry { IpAddress = "192.168.1.1", HostName = "server1", Env = "dev", IsSelected = true },
+                new HostEntry { IpAddress = "192.168.1.2", HostName = "server2", Env = "prod", IsSelected = false }
+            };
+            var newEnv = "staging";
+
+            // Act - Simulate bulk set logic
+            var selectedItems = entries.Where(h => h.IsSelected).ToList();
+            foreach (var item in selectedItems)
+            {
+                item.Env = newEnv;
+            }
+
+            // Assert
+            Assert.Equal("staging", entries[0].Env);
+            Assert.Equal("staging", entries[1].Env);
+            Assert.Equal("prod", entries[2].Env); // Not selected, should remain unchanged
+        }
+
+        [Fact]
+        public void BulkSetGroup_Logic_ShouldUpdateSelectedEntries()
+        {
+            // Arrange
+            var entries = new List<HostEntry>
+            {
+                new HostEntry { IpAddress = "127.0.0.1", HostName = "localhost", Group = "API", IsSelected = true },
+                new HostEntry { IpAddress = "192.168.1.1", HostName = "server1", Group = "DB", IsSelected = true },
+                new HostEntry { IpAddress = "192.168.1.2", HostName = "server2", Group = "Web", IsSelected = false }
+            };
+            var newGroup = "Backend";
+
+            // Act - Simulate bulk set logic
+            var selectedItems = entries.Where(h => h.IsSelected).ToList();
+            foreach (var item in selectedItems)
+            {
+                item.Group = newGroup;
+            }
+
+            // Assert
+            Assert.Equal("Backend", entries[0].Group);
+            Assert.Equal("Backend", entries[1].Group);
+            Assert.Equal("Web", entries[2].Group); // Not selected, should remain unchanged
+        }
+
+        [Fact]
+        public void BulkSet_WithNoSelectedItems_ShouldNotChangeAnything()
+        {
+            // Arrange
+            var entries = new List<HostEntry>
+            {
+                new HostEntry { IpAddress = "127.0.0.1", HostName = "localhost", Env = "local", IsSelected = false },
+                new HostEntry { IpAddress = "192.168.1.1", HostName = "server1", Env = "dev", IsSelected = false }
+            };
+
+            // Act
+            var selectedItems = entries.Where(h => h.IsSelected).ToList();
+
+            // Assert
+            Assert.Empty(selectedItems);
+            Assert.Equal("local", entries[0].Env);
+            Assert.Equal("dev", entries[1].Env);
+        }
+
+        [Fact]
+        public void BulkSetEnv_WithAllSelected_ShouldUpdateAllEntries()
+        {
+            // Arrange
+            var entries = new List<HostEntry>
+            {
+                new HostEntry { IpAddress = "127.0.0.1", HostName = "localhost", Env = "local", IsSelected = true },
+                new HostEntry { IpAddress = "192.168.1.1", HostName = "server1", Env = "dev", IsSelected = true },
+                new HostEntry { IpAddress = "192.168.1.2", HostName = "server2", Env = "prod", IsSelected = true }
+            };
+            var newEnv = "test";
+
+            // Act
+            var selectedItems = entries.Where(h => h.IsSelected).ToList();
+            foreach (var item in selectedItems)
+            {
+                item.Env = newEnv;
+            }
+
+            // Assert
+            Assert.All(entries, e => Assert.Equal("test", e.Env));
+        }
+
+        [Fact]
+        public void BulkSetGroup_ToEmptyString_ShouldClearGroup()
+        {
+            // Arrange
+            var entries = new List<HostEntry>
+            {
+                new HostEntry { IpAddress = "127.0.0.1", HostName = "localhost", Group = "API", IsSelected = true },
+                new HostEntry { IpAddress = "192.168.1.1", HostName = "server1", Group = "DB", IsSelected = true }
+            };
+
+            // Act
+            var selectedItems = entries.Where(h => h.IsSelected).ToList();
+            foreach (var item in selectedItems)
+            {
+                item.Group = "";
+            }
+
+            // Assert
+            Assert.All(entries, e => Assert.Equal("", e.Group));
+        }
+    }
 }

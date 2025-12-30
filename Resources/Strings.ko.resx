@@ -136,4 +136,15 @@
 해당 그룹으로 설정된 호스트의 그룹이 제거됩니다.</value></data>
   <data name="ManageEnv" xml:space="preserve"><value>관리</value></data>
   <data name="ManageGroup" xml:space="preserve"><value>관리</value></data>
+  
+  <!-- Bulk Set -->
+  <data name="BulkSetEnvTitle" xml:space="preserve"><value>환경 일괄 설정</value></data>
+  <data name="BulkSetGroupTitle" xml:space="preserve"><value>그룹 일괄 설정</value></data>
+  <data name="SelectedItems" xml:space="preserve"><value>선택 항목</value></data>
+  <data name="ItemCount" xml:space="preserve"><value>{0}개</value></data>
+  <data name="Apply" xml:space="preserve"><value>적용</value></data>
+  <data name="SelectItemToBulkSet" xml:space="preserve"><value>설정할 항목을 선택하세요.</value></data>
+  <data name="BulkSetSuccess" xml:space="preserve"><value>{0}개 항목이 변경되었습니다.</value></data>
+  <data name="SetEnv" xml:space="preserve"><value>환경설정</value></data>
+  <data name="SetGroup" xml:space="preserve"><value>그룹설정</value></data>
 </root>

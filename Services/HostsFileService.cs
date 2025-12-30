@@ -73,25 +73,6 @@ namespace HostManager.Services
         {
             var lines = new List<string>();
 
-            // 기존 파일의 비-호스트 라인들 (주석 등) 보존
-            if (File.Exists(_hostsFilePath))
-            {
-                var existingLines = File.ReadAllLines(_hostsFilePath, Encoding.UTF8);
-                foreach (var line in existingLines)
-                {
-                    // IP 형식이 없는 주석/빈 줄만 보존 (메타데이터 주석 제외)
-                    if (!HostLineRegex.IsMatch(line.Trim()) && !line.Trim().StartsWith("# [Env:"))
-                    {
-                        // 순수 주석이나 빈 줄인 경우
-                        if (string.IsNullOrWhiteSpace(line) || 
-                            (line.Trim().StartsWith("#") && !ContainsIpAddress(line)))
-                        {
-                            lines.Add(line);
-                        }
-                    }
-                }
-            }
-
             // 환경별 > 그룹별로 정렬
             var sortedEntries = entries
                 .OrderBy(e => string.IsNullOrEmpty(e.Env) ? "zzz" : e.Env)
@@ -156,11 +137,6 @@ namespace HostManager.Services
             }
 
             File.WriteAllLines(_hostsFilePath, lines, Encoding.UTF8);
-        }
-
-        private bool ContainsIpAddress(string line)
-        {
-            return Regex.IsMatch(line, @"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}");
         }
 
         public static bool IsValidIpAddress(string ip)

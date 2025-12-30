@@ -150,5 +150,16 @@ namespace HostManager.Resources {
         public static string GroupDeleteConfirm => ResourceManager.GetString("GroupDeleteConfirm", resourceCulture) ?? "Are you sure you want to delete group '{0}'?\nHosts with this group will have their group removed.";
         public static string ManageEnv => ResourceManager.GetString("ManageEnv", resourceCulture) ?? "Manage";
         public static string ManageGroup => ResourceManager.GetString("ManageGroup", resourceCulture) ?? "Manage";
+        
+        // ===== Bulk Set =====
+        public static string BulkSetEnvTitle => ResourceManager.GetString("BulkSetEnvTitle", resourceCulture) ?? "Bulk Set Environment";
+        public static string BulkSetGroupTitle => ResourceManager.GetString("BulkSetGroupTitle", resourceCulture) ?? "Bulk Set Group";
+        public static string SelectedItems => ResourceManager.GetString("SelectedItems", resourceCulture) ?? "Selected Items";
+        public static string ItemCount => ResourceManager.GetString("ItemCount", resourceCulture) ?? "{0} items";
+        public static string Apply => ResourceManager.GetString("Apply", resourceCulture) ?? "Apply";
+        public static string SelectItemToBulkSet => ResourceManager.GetString("SelectItemToBulkSet", resourceCulture) ?? "Please select items to set.";
+        public static string BulkSetSuccess => ResourceManager.GetString("BulkSetSuccess", resourceCulture) ?? "Successfully updated {0} items.";
+        public static string SetEnv => ResourceManager.GetString("SetEnv", resourceCulture) ?? "Set Env";
+        public static string SetGroup => ResourceManager.GetString("SetGroup", resourceCulture) ?? "Set Group";
     }
 }
