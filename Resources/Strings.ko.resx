@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="0" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Window Titles -->
+  <data name="AppTitle" xml:space="preserve"><value>Host Manager</value></data>
+  <data name="GuideTitle" xml:space="preserve"><value>사용 가이드</value></data>
+  <data name="ExitTitle" xml:space="preserve"><value>프로그램 종료</value></data>
+  <data name="AddHostTitle" xml:space="preserve"><value>호스트 추가</value></data>
+  <data name="EnvManageTitle" xml:space="preserve"><value>환경 관리</value></data>
+  <data name="GroupManageTitle" xml:space="preserve"><value>그룹 관리</value></data>
+  
+  <!-- Buttons -->
+  <data name="Refresh" xml:space="preserve"><value>새로고침</value></data>
+  <data name="Save" xml:space="preserve"><value>저장</value></data>
+  <data name="Add" xml:space="preserve"><value>추가</value></data>
+  <data name="Delete" xml:space="preserve"><value>삭제</value></data>
+  <data name="Enable" xml:space="preserve"><value>활성화</value></data>
+  <data name="Disable" xml:space="preserve"><value>비활성화</value></data>
+  <data name="SelectAll" xml:space="preserve"><value>전체 선택/해제</value></data>
+  <data name="Open" xml:space="preserve"><value>OPEN</value></data>
+  <data name="Backup" xml:space="preserve"><value>백업</value></data>
+  <data name="Guide" xml:space="preserve"><value>가이드</value></data>
+  <data name="Ok" xml:space="preserve"><value>확인</value></data>
+  <data name="Cancel" xml:space="preserve"><value>취소</value></data>
+  <data name="Yes" xml:space="preserve"><value>예</value></data>
+  <data name="No" xml:space="preserve"><value>아니오</value></data>
+  <data name="Close" xml:space="preserve"><value>닫기</value></data>
+  <data name="Confirm" xml:space="preserve"><value>확인</value></data>
+  <data name="Reset" xml:space="preserve"><value>초기화</value></data>
+  
+  <!-- Labels -->
+  <data name="Environment" xml:space="preserve"><value>환경</value></data>
+  <data name="Group" xml:space="preserve"><value>그룹</value></data>
+  <data name="Search" xml:space="preserve"><value>검색</value></data>
+  <data name="All" xml:space="preserve"><value>전체</value></data>
+  <data name="None" xml:space="preserve"><value>없음</value></data>
+  <data name="IpAddress" xml:space="preserve"><value>IP 주소</value></data>
+  <data name="HostName" xml:space="preserve"><value>호스트명</value></data>
+  <data name="Description" xml:space="preserve"><value>설명</value></data>
+  <data name="Enabled" xml:space="preserve"><value>활성</value></data>
+  <data name="Select" xml:space="preserve"><value>선택</value></data>
+  <data name="Unspecified" xml:space="preserve"><value>미지정</value></data>
+  
+  <!-- Exit Dialog -->
+  <data name="ExitProgram" xml:space="preserve"><value>프로그램 종료</value></data>
+  <data name="MinimizeToTray" xml:space="preserve"><value>트레이로 최소화</value></data>
+  <data name="ExitQuestion" xml:space="preserve"><value>프로그램을 종료하시겠습니까?</value></data>
+  <data name="TrayDescription" xml:space="preserve"><value>시스템 트레이로 최소화하면 백그라운드에서 계속 실행됩니다.</value></data>
+  
+  <!-- Messages -->
+  <data name="SaveSuccess" xml:space="preserve"><value>저장이 완료되었습니다.</value></data>
+  <data name="SaveFailed" xml:space="preserve"><value>저장에 실패했습니다.</value></data>
+  <data name="BackupSuccess" xml:space="preserve"><value>백업이 완료되었습니다.</value></data>
+  <data name="BackupFailed" xml:space="preserve"><value>백업에 실패했습니다.</value></data>
+  <data name="DeleteConfirm" xml:space="preserve"><value>선택한 항목을 삭제하시겠습니까?</value></data>
+  <data name="SelectItemToDelete" xml:space="preserve"><value>삭제할 항목을 선택하세요.</value></data>
+  <data name="SelectItemToEnable" xml:space="preserve"><value>활성화할 항목을 선택하세요.</value></data>
+  <data name="SelectItemToDisable" xml:space="preserve"><value>비활성화할 항목을 선택하세요.</value></data>
+  <data name="InvalidIpAddress" xml:space="preserve"><value>아이피를 올바르게 입력하세요.</value></data>
+  <data name="InvalidHostName" xml:space="preserve"><value>호스트명을 올바르게 입력하세요.</value></data>
+  <data name="AdminRequired" xml:space="preserve"><value>관리자 권한으로 프로그램을 실행해 주세요.</value></data>
+  <data name="UnsavedChanges" xml:space="preserve"><value>저장되지 않은 변경 사항이 있습니다. 저장하시겠습니까?</value></data>
+  <data name="HostsFileNotFound" xml:space="preserve"><value>hosts 파일을 찾을 수 없습니다.</value></data>
+  <data name="Error" xml:space="preserve"><value>오류</value></data>
+  <data name="Warning" xml:space="preserve"><value>경고</value></data>
+  <data name="Info" xml:space="preserve"><value>알림</value></data>
+  <data name="Success" xml:space="preserve"><value>완료</value></data>
+  <data name="PermissionError" xml:space="preserve"><value>권한 오류</value></data>
+  <data name="InputError" xml:space="preserve"><value>입력 오류</value></data>
+  <data name="DeleteConfirmTitle" xml:space="preserve"><value>삭제 확인</value></data>
+  <data name="SaveConfirmTitle" xml:space="preserve"><value>저장 확인</value></data>
+  <data name="BackupFile" xml:space="preserve"><value>백업 파일</value></data>
+  
+  <!-- Tooltips -->
+  <data name="RefreshTooltip" xml:space="preserve"><value>Ctrl+R 또는 F5</value></data>
+  <data name="SaveTooltip" xml:space="preserve"><value>Ctrl+S</value></data>
+  <data name="AddTooltip" xml:space="preserve"><value>Ctrl+N</value></data>
+  <data name="DeleteTooltip" xml:space="preserve"><value>Delete</value></data>
+  <data name="SelectAllTooltip" xml:space="preserve"><value>Ctrl+A</value></data>
+  <data name="OpenTooltip" xml:space="preserve"><value>hosts 파일 열기</value></data>
+  <data name="BackupTooltip" xml:space="preserve"><value>hosts 파일 백업</value></data>
+  <data name="GuideTooltip" xml:space="preserve"><value>사용 가이드 보기 (Ctrl+H)</value></data>
+  <data name="SearchPlaceholder" xml:space="preserve"><value>IP 또는 호스트명 검색...</value></data>
+  
+  <!-- Tray -->
+  <data name="TrayOpen" xml:space="preserve"><value>열기</value></data>
+  <data name="TrayExit" xml:space="preserve"><value>종료</value></data>
+  <data name="TrayMinimized" xml:space="preserve"><value>프로그램이 시스템 트레이로 최소화되었습니다.</value></data>
+  
+  <!-- Add Host Dialog -->
+  <data name="NewHost" xml:space="preserve"><value>새 호스트</value></data>
+  
+  <!-- Env/Group Management -->
+  <data name="EnvDeleteConfirm" xml:space="preserve"><value>'{0}' 환경을 삭제하시겠습니까?
+해당 환경으로 설정된 호스트의 환경이 제거됩니다.</value></data>
+  <data name="GroupDeleteConfirm" xml:space="preserve"><value>'{0}' 그룹을 삭제하시겠습니까?
+해당 그룹으로 설정된 호스트의 그룹이 제거됩니다.</value></data>
+  <data name="ManageEnv" xml:space="preserve"><value>관리</value></data>
+  <data name="ManageGroup" xml:space="preserve"><value>관리</value></data>
+</root>

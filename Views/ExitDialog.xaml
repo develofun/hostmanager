@@ -1,0 +1,186 @@
+<Window x:Class="HostManager.Views.ExitDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="프로그램 종료" 
+        SizeToContent="Height"
+        Width="400"
+        MinHeight="200"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#FAFAFA"
+        WindowStyle="None"
+        AllowsTransparency="True">
+    
+    <Window.Resources>
+        <!-- Colors -->
+        <SolidColorBrush x:Key="PrimaryBrush" Color="#2196F3"/>
+        <SolidColorBrush x:Key="PrimaryDarkBrush" Color="#1976D2"/>
+        <SolidColorBrush x:Key="SurfaceBrush" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="DividerBrush" Color="#BDBDBD"/>
+        <SolidColorBrush x:Key="TextPrimaryBrush" Color="#212121"/>
+        <SolidColorBrush x:Key="ErrorBrush" Color="#F44336"/>
+        <SolidColorBrush x:Key="WarningBrush" Color="#FF9800"/>
+    </Window.Resources>
+    
+    <Border Background="{StaticResource SurfaceBrush}" 
+            CornerRadius="8" 
+            BorderBrush="{StaticResource DividerBrush}" 
+            BorderThickness="1">
+        <Border.Effect>
+            <DropShadowEffect Color="Black" Opacity="0.2" BlurRadius="20" ShadowDepth="4"/>
+        </Border.Effect>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            
+            <!-- 타이틀 바 -->
+            <Border Grid.Row="0" Background="{StaticResource WarningBrush}" CornerRadius="8,8,0,0"
+                    MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="16,0,0,0">
+                        <TextBlock Text="🚪" 
+                                   FontSize="18"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,10,0"/>
+                        <TextBlock Text="프로그램 종료" 
+                                   Foreground="White" 
+                                   FontSize="15" 
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            <!-- 메시지 내용 -->
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="24,20,24,20">
+                <TextBlock Text="프로그램을 종료하시겠습니까?"
+                           TextWrapping="Wrap"
+                           FontSize="14"
+                           LineHeight="22"
+                           HorizontalAlignment="Center"
+                           Foreground="{StaticResource TextPrimaryBrush}"/>
+                <TextBlock Text="시스템 트레이로 최소화하면 백그라운드에서 계속 실행됩니다."
+                           TextWrapping="Wrap"
+                           FontSize="12"
+                           Margin="0,8,0,0"
+                           HorizontalAlignment="Center"
+                           Foreground="#757575"/>
+            </StackPanel>
+            
+            <!-- 버튼 영역 -->
+            <Border Grid.Row="2" BorderBrush="{StaticResource DividerBrush}" BorderThickness="0,1,0,0">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                    <!-- 프로그램 종료 버튼 -->
+                    <Button x:Name="ExitButton"
+                            Content="🚪 프로그램 종료" 
+                            Background="{StaticResource ErrorBrush}"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Padding="20,10"
+                            FontSize="13"
+                            Cursor="Hand"
+                            Click="ExitButton_Click"
+                            Margin="0,0,8,0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" 
+                                        Background="{TemplateBinding Background}" 
+                                        CornerRadius="4"
+                                        Padding="{TemplateBinding Padding}">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="Black" Opacity="0.15" BlurRadius="4" ShadowDepth="1"/>
+                                    </Border.Effect>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#D32F2F"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#C62828"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
+                    <!-- 시스템 트레이 최소화 버튼 -->
+                    <Button x:Name="MinimizeToTrayButton"
+                            Content="📥 트레이로 최소화" 
+                            Background="{StaticResource PrimaryBrush}"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Padding="20,10"
+                            FontSize="13"
+                            Cursor="Hand"
+                            Click="MinimizeToTrayButton_Click"
+                            Margin="0,0,8,0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" 
+                                        Background="{TemplateBinding Background}" 
+                                        CornerRadius="4"
+                                        Padding="{TemplateBinding Padding}">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="Black" Opacity="0.15" BlurRadius="4" ShadowDepth="1"/>
+                                    </Border.Effect>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="{StaticResource PrimaryDarkBrush}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#1565C0"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
+                    <!-- 취소 버튼 -->
+                    <Button x:Name="CancelButton"
+                            Content="취소" 
+                            Background="{StaticResource SurfaceBrush}"
+                            Foreground="{StaticResource TextPrimaryBrush}"
+                            BorderBrush="{StaticResource DividerBrush}"
+                            BorderThickness="1"
+                            Padding="20,10"
+                            FontSize="13"
+                            Cursor="Hand"
+                            Click="CancelButton_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" 
+                                        Background="{TemplateBinding Background}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="4"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#F5F5F5"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#EEEEEE"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

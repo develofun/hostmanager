@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="0" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Window Titles -->
+  <data name="AppTitle" xml:space="preserve"><value>Host Manager</value></data>
+  <data name="GuideTitle" xml:space="preserve"><value>User Guide</value></data>
+  <data name="ExitTitle" xml:space="preserve"><value>Exit Program</value></data>
+  <data name="AddHostTitle" xml:space="preserve"><value>Add Host</value></data>
+  <data name="EnvManageTitle" xml:space="preserve"><value>Environment Management</value></data>
+  <data name="GroupManageTitle" xml:space="preserve"><value>Group Management</value></data>
+  
+  <!-- Buttons -->
+  <data name="Refresh" xml:space="preserve"><value>Refresh</value></data>
+  <data name="Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Add" xml:space="preserve"><value>Add</value></data>
+  <data name="Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Enable" xml:space="preserve"><value>Enable</value></data>
+  <data name="Disable" xml:space="preserve"><value>Disable</value></data>
+  <data name="SelectAll" xml:space="preserve"><value>Select All/None</value></data>
+  <data name="Open" xml:space="preserve"><value>OPEN</value></data>
+  <data name="Backup" xml:space="preserve"><value>Backup</value></data>
+  <data name="Guide" xml:space="preserve"><value>Guide</value></data>
+  <data name="Ok" xml:space="preserve"><value>OK</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Yes" xml:space="preserve"><value>Yes</value></data>
+  <data name="No" xml:space="preserve"><value>No</value></data>
+  <data name="Close" xml:space="preserve"><value>Close</value></data>
+  <data name="Confirm" xml:space="preserve"><value>Confirm</value></data>
+  <data name="Reset" xml:space="preserve"><value>Reset</value></data>
+  
+  <!-- Labels -->
+  <data name="Environment" xml:space="preserve"><value>Environment</value></data>
+  <data name="Group" xml:space="preserve"><value>Group</value></data>
+  <data name="Search" xml:space="preserve"><value>Search</value></data>
+  <data name="All" xml:space="preserve"><value>All</value></data>
+  <data name="None" xml:space="preserve"><value>None</value></data>
+  <data name="IpAddress" xml:space="preserve"><value>IP Address</value></data>
+  <data name="HostName" xml:space="preserve"><value>Host Name</value></data>
+  <data name="Description" xml:space="preserve"><value>Description</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Enabled</value></data>
+  <data name="Select" xml:space="preserve"><value>Select</value></data>
+  <data name="Unspecified" xml:space="preserve"><value>Unspecified</value></data>
+  
+  <!-- Exit Dialog -->
+  <data name="ExitProgram" xml:space="preserve"><value>Exit Program</value></data>
+  <data name="MinimizeToTray" xml:space="preserve"><value>Minimize to Tray</value></data>
+  <data name="ExitQuestion" xml:space="preserve"><value>Do you want to exit the program?</value></data>
+  <data name="TrayDescription" xml:space="preserve"><value>Minimizing to system tray will keep the program running in the background.</value></data>
+  
+  <!-- Messages -->
+  <data name="SaveSuccess" xml:space="preserve"><value>Saved successfully.</value></data>
+  <data name="SaveFailed" xml:space="preserve"><value>Failed to save.</value></data>
+  <data name="BackupSuccess" xml:space="preserve"><value>Backup completed.</value></data>
+  <data name="BackupFailed" xml:space="preserve"><value>Backup failed.</value></data>
+  <data name="DeleteConfirm" xml:space="preserve"><value>Are you sure you want to delete the selected items?</value></data>
+  <data name="SelectItemToDelete" xml:space="preserve"><value>Please select items to delete.</value></data>
+  <data name="SelectItemToEnable" xml:space="preserve"><value>Please select items to enable.</value></data>
+  <data name="SelectItemToDisable" xml:space="preserve"><value>Please select items to disable.</value></data>
+  <data name="InvalidIpAddress" xml:space="preserve"><value>Please enter a valid IP address.</value></data>
+  <data name="InvalidHostName" xml:space="preserve"><value>Please enter a valid host name.</value></data>
+  <data name="AdminRequired" xml:space="preserve"><value>Please run the program as administrator.</value></data>
+  <data name="UnsavedChanges" xml:space="preserve"><value>There are unsaved changes. Do you want to save?</value></data>
+  <data name="HostsFileNotFound" xml:space="preserve"><value>Hosts file not found.</value></data>
+  <data name="Error" xml:space="preserve"><value>Error</value></data>
+  <data name="Warning" xml:space="preserve"><value>Warning</value></data>
+  <data name="Info" xml:space="preserve"><value>Information</value></data>
+  <data name="Success" xml:space="preserve"><value>Success</value></data>
+  <data name="PermissionError" xml:space="preserve"><value>Permission Error</value></data>
+  <data name="InputError" xml:space="preserve"><value>Input Error</value></data>
+  <data name="DeleteConfirmTitle" xml:space="preserve"><value>Delete Confirmation</value></data>
+  <data name="SaveConfirmTitle" xml:space="preserve"><value>Save Confirmation</value></data>
+  <data name="BackupFile" xml:space="preserve"><value>Backup file</value></data>
+  
+  <!-- Tooltips -->
+  <data name="RefreshTooltip" xml:space="preserve"><value>Ctrl+R or F5</value></data>
+  <data name="SaveTooltip" xml:space="preserve"><value>Ctrl+S</value></data>
+  <data name="AddTooltip" xml:space="preserve"><value>Ctrl+N</value></data>
+  <data name="DeleteTooltip" xml:space="preserve"><value>Delete</value></data>
+  <data name="SelectAllTooltip" xml:space="preserve"><value>Ctrl+A</value></data>
+  <data name="OpenTooltip" xml:space="preserve"><value>Open hosts file</value></data>
+  <data name="BackupTooltip" xml:space="preserve"><value>Backup hosts file</value></data>
+  <data name="GuideTooltip" xml:space="preserve"><value>View user guide (Ctrl+H)</value></data>
+  <data name="SearchPlaceholder" xml:space="preserve"><value>Search IP or hostname...</value></data>
+  
+  <!-- Tray -->
+  <data name="TrayOpen" xml:space="preserve"><value>Open</value></data>
+  <data name="TrayExit" xml:space="preserve"><value>Exit</value></data>
+  <data name="TrayMinimized" xml:space="preserve"><value>Program minimized to system tray.</value></data>
+  
+  <!-- Add Host Dialog -->
+  <data name="NewHost" xml:space="preserve"><value>New Host</value></data>
+  
+  <!-- Env/Group Management -->
+  <data name="EnvDeleteConfirm" xml:space="preserve"><value>Are you sure you want to delete environment '{0}'?
+Hosts with this environment will have their environment removed.</value></data>
+  <data name="GroupDeleteConfirm" xml:space="preserve"><value>Are you sure you want to delete group '{0}'?
+Hosts with this group will have their group removed.</value></data>
+  <data name="ManageEnv" xml:space="preserve"><value>Manage</value></data>
+  <data name="ManageGroup" xml:space="preserve"><value>Manage</value></data>
+</root>
